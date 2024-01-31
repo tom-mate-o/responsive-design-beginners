@@ -12,9 +12,18 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Source Sans 3", sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
+}
+
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
 h1,
@@ -26,11 +35,17 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(1.75rem, 1rem + 2vw, 2.5rem);
+  font-size: 2.625rem;
+  font-size: clamp(2.625rem, 1.77rem + 3.64vw, 4.5rem);
 }
 
 h2 {
-  font-size: clamp(1.375rem, 0.875rem + 1.5vw, 2.25rem);
+  font-size: 2.25rem;
+  font-size: clamp(2.25rem, 1.91rem + 1.45vw, 3rem);
+}
+
+h3 {
+  font-size: 1.5rem;
 }
 
 p {
@@ -45,8 +60,16 @@ a:active {
 }
 
 :root {
-  --background-color: hsl(0, 0%, 13%);
-  --text-color: hsl(0, 0%, 100%);
+  --main-bg: hsl(0, 0%, 100%);
+  --text-dark: hsl(233, 14%, 25%);
+  --text-light: hsl(0, 0%, 100%);
+  --hero-bg: hsl(232, 58%, 55%);
+  --button-dash-primary-bg: hsl(180, 100%, 42%);
+  --button-primary-text: hsl(233, 14%, 25%);
+  --button-secondary-bg: transparent;
+  --button-secondary-border: hsl(0, 0%, 100%);
+  --button-secondary-text: hsl(0, 0%, 100%);
+  --fullwidth-bg: hsl(320, 85%, 41%);
 }
 
 .magenta {
@@ -57,46 +80,7 @@ a:active {
   background-color: hsl(120, 100%, 19%);
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  gap: 2.5rem;
-  width: min(100% - 2.5rem, 62.5rem);
+.wrapper {
+  width: min(100% - 3rem, 75rem);
   margin-inline: auto;
-}
-@media (min-width: 56.25em) {
-  .grid {
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: auto;
-  }
-}
-.grid__main, .grid__sidebar {
-  padding: 2.5rem;
-}
-.grid__main {
-  background-color: hsl(240, 100%, 24%);
-}
-@media (min-width: 43.75em) {
-  .grid__main {
-    background-color: hsl(120, 100%, 16%);
-  }
-}
-@media (min-width: 56.25em) {
-  .grid__main {
-    background-color: hsl(16, 100%, 39%);
-  }
-}
-@media (max-width: 56.24875em) {
-  .grid__sidebar {
-    text-align: center;
-  }
-}
-@media (max-width: 43.74875em) {
-  .grid__sidebar {
-    text-align: right;
-  }
-}
-.grid__widget {
-  padding: 1rem;
 }/*# sourceMappingURL=style.css.map */
