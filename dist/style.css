@@ -15,6 +15,7 @@ body {
   font-family: "Source Sans 3", sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
+  margin-block-end: 50vh;
 }
 
 .visually-hidden {
@@ -24,6 +25,14 @@ body {
   width: 1px;
   height: 1px;
   overflow: hidden;
+}
+.visually-hidden:focus {
+  left: 0;
+  width: auto;
+  height: auto;
+  background-color: #fff;
+  padding: 0.5rem;
+  border: 1px solid;
 }
 
 h1,
@@ -63,6 +72,7 @@ a:active {
   --main-bg: hsl(0, 0%, 100%);
   --text-dark: hsl(233, 14%, 25%);
   --text-light: hsl(0, 0%, 100%);
+  --header-bg: hsl(232, 58%, 55%);
   --hero-bg: hsl(232, 58%, 55%);
   --button-dash-primary-bg: hsl(180, 100%, 42%);
   --button-primary-text: hsl(233, 14%, 25%);
@@ -83,4 +93,63 @@ a:active {
 .wrapper {
   width: min(100% - 3rem, 75rem);
   margin-inline: auto;
+}
+
+.topnav {
+  background-color: var(--header-bg);
+}
+.topnav__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 12px;
+}
+@media (min-width: 56.25em) {
+  .topnav__wrapper {
+    padding-block: 20px;
+  }
+}
+.topnav__homelink:hover {
+  opacity: 0.9;
+}
+.topnav__logo {
+  display: block;
+  width: 4.375rem;
+  height: auto;
+}
+@media (min-width: 56.25em) {
+  .topnav__logo {
+    width: 8rem;
+  }
+}
+.topnav__links {
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+@media (min-width: 56.25em) {
+  .topnav__links {
+    gap: 40px;
+  }
+}
+.topnav__item {
+  list-style-type: none;
+}
+.topnav__link {
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--text-light);
+  text-transform: uppercase;
+}
+@media (min-width: 56.25em) {
+  .topnav__link {
+    font-size: 1rem;
+  }
+}
+.topnav__link:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
 }/*# sourceMappingURL=style.css.map */
