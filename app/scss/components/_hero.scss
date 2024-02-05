@@ -1,0 +1,41 @@
+@use '../util/' as u;
+
+.hero {
+  background-color: var(--header-bg);
+  color: var(--text-light);
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    padding-block: 30px 60px; // in px, bc. we don't want to increase the padding with the screen
+
+    @include u.breakpoint(large) {
+      padding-block: 40px 80px;
+      flex-direction: row-reverse;
+      gap: 10%;
+    }
+  }
+
+  &__image {
+    width: 61%;
+    max-width: u.rem(483);
+
+    @include u.breakpoint(large) {
+      flex: 5;
+    }
+  }
+
+  &__text {
+    @include u.breakpoint(large) {
+      flex: 6;
+    }
+  }
+
+  &__button {
+    &:first-of-type {
+      margin-inline-end: 20px;
+    }
+  }
+}
