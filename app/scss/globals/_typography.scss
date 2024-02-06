@@ -17,6 +17,8 @@ h1 {
 h2 {
   font-size: u.rem(36);
   font-size: clamp(u.rem(36), 1.91rem + 1.45vw, u.rem(48));
+  line-height: 1.1;
+  margin-block-end: u.rem(20);
 }
 
 h3 {
