@@ -1,0 +1,43 @@
+@use '../util/' as u;
+
+.features {
+  &__wrapper {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @include u.breakpoint(large) {
+      flex-wrap: nowrap;
+      gap: 5.5%;
+    }
+  }
+
+  &__item {
+    text-align: center;
+
+    @include u.breakpoint(large) {
+      flex: 1; // to make the width of the items equal
+      text-align: start;
+    }
+  }
+
+  &__icon {
+    width: auto;
+    height: u.rem(48);
+    margin-block-end: 10px;
+
+    @include u.breakpoint-down(medium) {
+      margin-inline: auto;
+    }
+  }
+
+  &__title {
+    margin-block-end: u.rem(10);
+  }
+
+  &__description {
+    max-width: 50ch;
+    margin-block-end: 0;
+  }
+}
