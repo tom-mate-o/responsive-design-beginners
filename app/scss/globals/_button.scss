@@ -23,6 +23,16 @@
       background-color: var(--button-primary-bg-hover);
       border: u.rem(2) solid var(--button-primary-bg-hover);
     }
+
+    &.white {
+      background-color: var(--button-primary-white-bg);
+      border: u.rem(2) solid var(--button-primary-white-bg); // to have the same height as the secondary, transparent button
+    }
+
+    &:hover {
+      background-color: var(--button-primary-white-bg-hover);
+      border: u.rem(2) solid var(--button-primary-white-bg-hover); // to have the same height as the secondary, transparent button
+    }
   }
 
   &.secondary {

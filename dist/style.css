@@ -101,6 +101,8 @@ a:active {
   --hero-bg: hsl(232, 58%, 55%);
   --button-primary-bg: hsl(180, 100%, 42%);
   --button-primary-bg-hover: hsl(180, 100%, 37%);
+  --button-primary-white-bg: hsl(0, 0%, 100%);
+  --button-primary-white-bg-hover: hsl(0, 0%, 90%);
   --button-primary-text: hsl(233, 14%, 25%);
   --button-secondary-bg: transparent;
   --button-secondary-bg-hover: hsl(0, 0%, 100%);
@@ -108,14 +110,9 @@ a:active {
   --button-secondary-text: hsl(0, 0%, 100%);
   --button-secondary-text-hover: hsl(232, 58%, 55%);
   --fullwidth-bg: hsl(320, 85%, 41%);
-}
-
-.magenta {
-  background-color: hsl(300, 100%, 28%);
-}
-
-.green {
-  background-color: hsl(120, 100%, 19%);
+  --gradient1: hsl(233, 14%, 25%);
+  --gradient2: hsl(232, 58%, 55%);
+  --gradient3: hsl(180, 100%, 42%);
 }
 
 .button {
@@ -140,6 +137,14 @@ a:active {
   background-color: var(--button-primary-bg-hover);
   border: 0.125rem solid var(--button-primary-bg-hover);
 }
+.button.primary.white {
+  background-color: var(--button-primary-white-bg);
+  border: 0.125rem solid var(--button-primary-white-bg);
+}
+.button.primary:hover {
+  background-color: var(--button-primary-white-bg-hover);
+  border: 0.125rem solid var(--button-primary-white-bg-hover);
+}
 .button.secondary {
   background-color: var(--button-secondary-bg);
   color: var(--button-secondary-text);
@@ -148,6 +153,16 @@ a:active {
 .button.secondary:hover {
   background-color: var(--button-secondary-bg-hover);
   color: var(--button-secondary-text-hover);
+}
+
+.fullwidth {
+  color: var(--text-light);
+  text-align: center;
+}
+.fullwidth__description {
+  max-width: 70ch;
+  margin-inline: auto;
+  margin-block-end: 2.5rem;
 }
 
 .wrapper {
@@ -295,19 +310,15 @@ a:active {
 
 .fw-feature {
   background-color: var(--fullwidth-bg);
-  color: var(--text-light);
-  text-align: center;
-}
-.fw-feature__description {
-  max-width: 70ch;
-  margin-inline: auto;
-  margin-block-end: 2.5rem;
 }
 .fw-feature__image {
   max-width: 49.5rem;
   margin-inline: auto;
 }
 
+.testimonial__wrapper {
+  max-width: 50rem;
+}
 .testimonial__icon {
   width: 16%;
   max-width: 4.875rem;
@@ -337,5 +348,14 @@ a:active {
 @media (max-width: 28.31125em) {
   .testimonial__author-description {
     text-align: center;
+  }
+}
+
+.fw-cta {
+  background: linear-gradient(to right, var(--gradient1), var(--gradient2) 75%, var(--gradient3) 150%);
+}
+@media (min-width: 56.25em) {
+  .fw-cta {
+    background: linear-gradient(to right, var(--gradient1), var(--gradient2) 55%, var(--gradient3) 110%);
   }
 }/*# sourceMappingURL=style.css.map */
