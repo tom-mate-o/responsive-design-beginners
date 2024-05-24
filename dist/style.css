@@ -113,6 +113,8 @@ a:active {
   --text-light: hsl(0, 0%, 100%);
   --text-link-hover: hsl(320, 85%, 41%);
   --header-bg: hsl(232, 58%, 55%);
+  --link-gradient1: hsl(180, 100%, 42%);
+  --link-gradient2: hsl(50, 99%, 53%);
   --hero-bg: hsl(232, 58%, 55%);
   --button-primary-bg: hsl(180, 100%, 42%);
   --button-primary-bg-hover: hsl(180, 100%, 37%);
@@ -223,7 +225,9 @@ a:active {
   }
 }
 .topnav__link {
+  display: block;
   font-size: 0.875rem;
+  line-height: 1;
   font-weight: 700;
   letter-spacing: 0.05em;
   color: var(--text-light);
@@ -234,10 +238,17 @@ a:active {
     font-size: 1rem;
   }
 }
-.topnav__link:hover {
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 4px;
+.topnav__link::after {
+  content: "";
+  display: block;
+  height: 3px;
+  margin-top: 3px;
+  background: linear-gradient(to right, var(--link-gradient1), var(--link-gradient2) 80%);
+  opacity: 0;
+  transition: opacity 250ms ease-in-out;
+}
+.topnav__link:hover::after {
+  opacity: 1;
 }
 
 .hero {
@@ -381,7 +392,6 @@ a:active {
 }
 .footer__homelink {
   display: block;
-  width: -moz-fit-content;
   width: fit-content;
 }
 .footer__logo-image {
