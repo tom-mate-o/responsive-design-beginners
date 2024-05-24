@@ -9,3 +9,24 @@
     padding-block: 80px;
   }
 }
+
+.fb-wrapper {
+  display: grid;
+  grid-template-columns:
+    [fb-start]1fr [content-start] min(100% - u.rem(48), u.rem(1200))
+    [content-end] 1fr [fb-end];
+
+  > * {
+    // this targets all direct children of the .fb-wrapper
+    grid-row: 1/2;
+  }
+
+  &__full {
+    grid-column: fb-start / fb-end;
+    align-self: end;
+  }
+
+  &__content {
+    grid-column: content-start / content-end;
+  }
+}
