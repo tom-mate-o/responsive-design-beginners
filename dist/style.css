@@ -367,10 +367,40 @@ a {
   margin-inline: auto;
 }
 
+.alt-feature__wrapper {
+  display: grid;
+  gap: 60px;
+}
+@media (min-width: 56.25em) {
+  .alt-feature__wrapper {
+    gap: 80px;
+  }
+}
+.alt-feature__row {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+@media (min-width: 56.25em) {
+  .alt-feature__row {
+    flex-direction: row;
+    gap: 8%;
+  }
+}
 .alt-feature__image {
   width: auto;
-  max-width: 100%;
+  max-width: 12.5rem;
 }
+@media (min-width: 56.25em) {
+  .alt-feature__image {
+    max-width: 100%;
+  }
+}
+.alt-feature__text p {
+  margin-block-end: 0;
+}
+
 .testimonial__wrapper {
   max-width: 50rem;
 }
