@@ -1,0 +1,14 @@
+@use '../util/' as u;
+
+.alt-feature {
+  &__row {
+  }
+
+  &__image {
+    width: auto;
+    max-width: 100%; // Ensures the image doesn't overflow on smaller viewports
+  }
+
+  &__text {
+  }
+}

@@ -58,12 +58,12 @@
     color: var(--text-dark);
 
     &:hover {
-      color: var(--text-link-hover);
+      color: var(--text-link);
 
       #{$b}__social-path {
         // #{$b}__social-path is the same as .footer__social-path (variable)
         fill: var(
-          --text-link-hover
+          --text-link
         ); //if we hover over the text, also the social icon change color
       }
     }

@@ -84,6 +84,18 @@ h2 {
 h3 {
   font-size: 1.5rem;
   line-height: 1;
+  margin-block-end: 0.625rem;
+}
+h3.large {
+  font-size: 2.25rem;
+  font-size: clamp(2.25rem, 2.02rem + 0.9zvw, 2.75rem);
+}
+h3.large span {
+  display: block;
+  font-size: 1.25rem;
+  font-size: clamp(1.25rem, 1.14rem + 0.48vw, 1.5rem);
+  text-transform: uppercase;
+  margin-block-end: 0.625rem;
 }
 
 p {
@@ -107,11 +119,15 @@ a:active {
   text-decoration: none;
 }
 
+a {
+  color: var(--text-link);
+}
+
 :root {
   --main-bg: hsl(0, 0%, 100%);
   --text-dark: hsl(233, 14%, 25%);
   --text-light: hsl(0, 0%, 100%);
-  --text-link-hover: hsl(320, 85%, 41%);
+  --text-link: hsl(320, 85%, 41%);
   --header-bg: hsl(232, 58%, 55%);
   --link-gradient1: hsl(180, 100%, 42%);
   --link-gradient2: hsl(50, 99%, 53%);
@@ -338,9 +354,6 @@ a:active {
     margin-inline: auto;
   }
 }
-.features__title {
-  margin-block-end: 0.625rem;
-}
 .features__description {
   max-width: 50ch;
   margin-block-end: 0;
@@ -354,6 +367,10 @@ a:active {
   margin-inline: auto;
 }
 
+.alt-feature__image {
+  width: auto;
+  max-width: 100%;
+}
 .testimonial__wrapper {
   max-width: 50rem;
 }
@@ -440,10 +457,10 @@ a:active {
   color: var(--text-dark);
 }
 .footer__link:hover {
-  color: var(--text-link-hover);
+  color: var(--text-link);
 }
 .footer__link:hover .footer__social-path {
-  fill: var(--text-link-hover);
+  fill: var(--text-link);
 }
 .footer__social {
   width: 18px;
