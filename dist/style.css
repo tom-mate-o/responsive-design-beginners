@@ -412,6 +412,19 @@ a {
   max-width: 4.875rem;
   margin-block-end: clamp(1.25rem, 0.68rem + 2.42vw, 2.5rem);
 }
+@media (min-width: 87.5em) {
+  .testimonial__icon {
+    position: absolute;
+  }
+  .testimonial__icon:first-child {
+    translate: calc(-100% - 40px) -30px;
+  }
+  .testimonial__icon:nth-child(3) {
+    rotate: 180deg;
+    left: calc(100% + 40px);
+    translate: 0 calc(-10px - 100%);
+  }
+}
 .testimonial__quote {
   font-size: 1.5rem;
   font-size: clamp(1.5rem, 1.16rem + 1.45vw, 2.25rem);
