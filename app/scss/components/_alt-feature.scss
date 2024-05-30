@@ -19,6 +19,10 @@
     @include u.breakpoint('large') {
       flex-direction: row;
       gap: 8%;
+
+      &:nth-child(odd) {
+        flex-direction: row-reverse;
+      }
     }
   }
 

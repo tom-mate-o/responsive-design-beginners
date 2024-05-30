@@ -387,6 +387,9 @@ a {
     flex-direction: row;
     gap: 8%;
   }
+  .alt-feature__row:nth-child(odd) {
+    flex-direction: row-reverse;
+  }
 }
 .alt-feature__image {
   width: auto;
