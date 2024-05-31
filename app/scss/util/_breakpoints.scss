@@ -5,7 +5,9 @@ $breakpoints-up: (
   // 700px
   'large': f.em(900),
   // 900px
-  'xlarge': f.em(1400),
+  'xlarge': f.em(1100),
+  // 1100px
+  'xxlarge': f.em(1400),
   // 1440px
 );
 
@@ -15,7 +17,9 @@ $breakpoints-down: (
   // 699.98px
   'medium': f.em(899.98),
   // 899.98px
-  'large': f.em(1439.98),
+  'large': f.em(1099.98),
+  // 899.98px
+  'xlarge': f.em(1439.98),
   // 1439.98px,
 );
 

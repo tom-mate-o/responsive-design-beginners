@@ -5,12 +5,16 @@
     max-width: u.rem(800);
   }
 
+  figure {
+    position: relative;
+  }
+
   &__icon {
     width: 16%;
     max-width: u.rem(78);
     margin-block-end: clamp(u.rem(20), 0.68rem + 2.42vw, u.rem(40));
 
-    @include u.breakpoint(large) {
+    @include u.breakpoint(xlarge) {
       position: absolute;
 
       &:first-child {
@@ -18,9 +22,15 @@
       }
 
       &:nth-child(3) {
-        outline: 2px solid red;
         rotate: 180deg;
         left: calc(100% + 40px);
+        translate: 0 calc(-10px - 100%);
+      }
+    }
+
+    @include u.breakpoint-down('large') {
+      &:nth-child(3) {
+        display: none;
       }
     }
   }
