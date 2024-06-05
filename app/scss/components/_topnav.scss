@@ -1,7 +1,10 @@
 @use '../util/' as u;
 
 .topnav {
-  background-color: var(--header-bg);
+  &,
+  &__menu {
+    background-color: var(--header-bg);
+  }
 
   &__wrapper {
     display: flex;
@@ -14,6 +17,9 @@
     }
   }
 
+  &__homelink {
+  }
+
   &__logo {
     width: u.rem(70);
 
@@ -22,26 +28,57 @@
     }
   }
 
+  &__open,
+  &__close {
+    background: none;
+    padding: 0;
+    border: 0;
+  }
+
+  &__open {
+  }
+
+  &__menu {
+    @include u.breakpoint-down(small) {
+      position: fixed;
+      inset: 0 0 auto 0;
+      padding: 12px 24px 120px;
+      border-radius: 0 0 20px 20px;
+      outline: 2px solid yellow;
+    }
+  }
+
+  &__close {
+    display: none;
+
+    @include u.breakpoint-down(small) {
+      display: block;
+      margin-inline-start: auto;
+      margin-block-end: 84px;
+    }
+  }
+
   &__links {
     display: flex;
-    gap: 20px;
+    gap: 40px;
 
-    @include u.breakpoint('large') {
-      gap: 40px;
+    @include u.breakpoint-down(small) {
+      flex-direction: column;
+      align-items: center;
     }
   }
 
   &__link {
     display: block;
-    font-size: u.rem(14);
+    font-size: u.rem(20);
     line-height: 1;
     font-weight: 700;
-    letter-spacing: 0.05em;
     color: var(--text-light);
-    text-transform: uppercase;
 
-    @include u.breakpoint('large') {
+    @include u.breakpoint('medium') {
       font-size: u.rem(16);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
     &::after {
@@ -56,6 +93,10 @@
       );
       opacity: 0;
       transition: opacity 250ms ease-in-out;
+
+      @include u.breakpoint-down(small) {
+        display: none;
+      }
     }
 
     &:hover::after {
