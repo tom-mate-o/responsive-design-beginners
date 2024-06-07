@@ -18,7 +18,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/dist/style.css" />
-    <script src="/app/js/script.js"></script>
+    <script defer src="/app/js/bodyScrollLock.min.js"></script>
+    <script defer src="/app/js/script.js"></script>
   </head>
 
   <body>
@@ -36,12 +37,24 @@
           />
         </a>
         <nav>
-          <button class="topnav__open">
+          <span id="nav-label" hidden>Navigation</span>
+          <div id="overlay" class="topnav__overlay"></div>
+          <button
+            id="btnOpen"
+            class="topnav__open"
+            aria-expanded="false"
+            aria-labelledby="nav-label"
+          >
             <img src="/img/hamburger.svg" alt="" width="30" height="23" />
           </button>
 
-          <div class="topnav__menu">
-            <button class="topnav__close">
+          <div
+            id="menuTopNav"
+            class="topnav__menu"
+            role="dialog"
+            aria-labelledby="nav-label"
+          >
+            <button id="btnClose" class="topnav__close">
               <img src="/img/close-button.svg" alt="" width="26" height="26" />
             </button>
             <ul class="topnav__links">
@@ -300,7 +313,7 @@
         </section>
       </article>
     </main>
-    <footer class="footer">
+    <footer id="footer" class="footer">
       <h2 class="visually-hidden">Footer</h2>
       <div class="footer__wrapper wrapper">
         <section class="footer__logo">
