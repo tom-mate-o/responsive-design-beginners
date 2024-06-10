@@ -124,7 +124,7 @@ a:active {
   text-decoration: none;
 }
 
-a {
+p > a {
   color: var(--text-link);
 }
 
@@ -149,6 +149,9 @@ a {
   --button-secondary-border: hsl(0, 0%, 100%);
   --button-secondary-text: hsl(0, 0%, 100%);
   --button-secondary-text-hover: hsl(232, 58%, 55%);
+  --blog-graident1: hsl(245, 75%, 39%);
+  --blog-graident2: hsl(320, 85%, 41%);
+  --blog-shadow: hsla(233, 14%, 25%, 40%);
   --fullwidth-bg: hsl(320, 85%, 41%);
   --gradient1: hsl(233, 14%, 25%);
   --gradient2: hsl(232, 58%, 55%);
@@ -571,6 +574,38 @@ a {
   }
 }
 
+.blog__item {
+  display: grid;
+  grid-template: 1fr/1fr;
+}
+.blog__item > * {
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+}
+.blog__filter {
+  background-image: linear-gradient(to right, var(--blog-graident1) 30%, var(--blog-graident2));
+  mix-blend-mode: lighten;
+}
+.blog__text {
+  margin-inline: 10px;
+  padding: 16px;
+  background-color: var(--main-bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px var(--blog-shadow);
+  display: grid;
+  align-self: center;
+  gap: 1rem;
+  isolation: isolate;
+}
+.blog__text * {
+  margin: 0;
+}
+.blog__title a {
+  color: var(--text-dark);
+}
+.blog__title a:hover {
+  color: var(--text-link);
+}
 .fw-cta {
   background: linear-gradient(90deg, var(--gradient1) 0%, var(--gradient2) 75%, var(--gradient3) 150%);
 }

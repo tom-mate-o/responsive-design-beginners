@@ -1,0 +1,57 @@
+@use '../util/' as u;
+
+.blog {
+  &__grid {
+  }
+
+  &__item {
+    display: grid;
+    grid-template: 1fr / 1fr;
+
+    > * {
+      grid-column: 1 / -1;
+      grid-row: 1 / -1;
+    }
+  }
+
+  &__image {
+  }
+
+  &__filter {
+    background-image: linear-gradient(
+      to right,
+      var(--blog-graident1) 30%,
+      var(--blog-graident2)
+    );
+    mix-blend-mode: lighten;
+  }
+
+  &__text {
+    margin-inline: 10px;
+    padding: 16px;
+    background-color: var(--main-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px var(--blog-shadow);
+    display: grid;
+    align-self: center; //height is based on the content
+    gap: u.rem(16);
+    isolation: isolate; // to unstack it from the filter property
+
+    * {
+      margin: 0;
+    }
+  }
+
+  &__title {
+    a {
+      color: var(--text-dark);
+
+      &:hover {
+        color: var(--text-link);
+      }
+    }
+  }
+
+  &__meta {
+  }
+}
