@@ -81,7 +81,7 @@
       transition: translate ease-in-out;
 
       @media (prefers-reduced-motion) {
-        tranlate: none;
+        translate: none;
         opacity: 0;
         transition-property: opacity;
       }
