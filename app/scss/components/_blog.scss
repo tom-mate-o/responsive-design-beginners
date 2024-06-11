@@ -2,11 +2,28 @@
 
 .blog {
   &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(u.rem(300), 1fr));
+    gap: 20px;
   }
 
   &__item {
+    position: relative;
     display: grid;
     grid-template: 1fr / 1fr;
+    border-radius: 16px;
+    overflow: hidden;
+    min-height: u.rem(350);
+
+    @for $i from 1 through 8 {
+      &:nth-child(8n + #{$i}) .blog__filter {
+        background-image: linear-gradient(
+          calc(45deg * $i),
+          var(--blog-graident1) 30%,
+          var(--blog-graident2)
+        );
+      }
+    }
 
     > * {
       grid-column: 1 / -1;
@@ -15,6 +32,9 @@
   }
 
   &__image {
+    position: absolute;
+    height: 100%;
+    object-fit: cover;
   }
 
   &__filter {
@@ -53,5 +73,16 @@
   }
 
   &__meta {
+    display: flex;
+    justify-content: space-between;
+
+    * {
+      font-size: u.rem(14);
+      line-height: 1;
+    }
+
+    time {
+      text-transform: uppercase;
+    }
   }
 }

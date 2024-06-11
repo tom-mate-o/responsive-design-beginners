@@ -1,8 +1,11 @@
 @use '../util' as u;
 
 .fullwidth {
-  color: var(--text-light);
   text-align: center;
+
+  &.dark {
+    color: var(--text-light);
+  }
 
   &__description {
     max-width: 70ch;
